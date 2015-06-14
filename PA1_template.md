@@ -9,12 +9,11 @@ output:
 ## Loading and preprocessing the data
 
 ```r
-## Library calls and setting
+## Library calls
 library(knitr)
 library(dplyr)
 library(ggplot2)
 library(xtable)
-options(scipen = 999, digits = 0) ##No decimal (for steps)
 ```
 
 

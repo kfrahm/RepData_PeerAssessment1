@@ -8,12 +8,11 @@ output:
 
 ## Loading and preprocessing the data
 ```{r library, message=FALSE}
-## Library calls and setting
+## Library calls
 library(knitr)
 library(dplyr)
 library(ggplot2)
 library(xtable)
-options(scipen = 999, digits = 0) ##No decimal (for steps)
 ```
 
 ```{r stepHist}
@@ -35,7 +34,7 @@ stepsByDayMean <- mean(stepsByDaySum$steps)
 stepsByDayMed <- median(stepsByDaySum$steps)
 
 ```
-- The mean total number of steps taken per day: **`r stepsByDayMean`**
+- The mean total number of steps taken per day: **`r format(stepsByDayMean, digit=5)`**
 - The median total number of steps taken per day: **`r stepsByDayMed`**
 
 
@@ -55,7 +54,7 @@ hour <- substr(maxStepInterval$interval, 1, nchar(maxStepInterval$interval) - 2)
 min <- substr(maxStepInterval$interval, nchar(maxStepInterval$interval) - 1, nchar(maxStepInterval$interval))
 ```
 
-- The most active time of the day is **`r hour`:`r min` (`r maxStepInterval$interval` interval)** with **`r maxStepInterval$steps`** steps.
+- The most active time of the day is **`r hour`:`r min` (`r maxStepInterval$interval` interval)** with **`r round(maxStepInterval$steps, 0)`** steps.
 
 ## Imputing missing values
 ```{r naRows}
